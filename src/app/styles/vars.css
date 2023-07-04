@@ -1,0 +1,20 @@
+@import url(./fonts.css);
+
+:root {
+    /* fonts */
+    --font: 'Noto Sans', 'Arial', 'sans-serif';
+ 
+    /* colors */
+    --color-blue: #175EF1;
+    --color-orange: #FF9900;
+    --color-red: #EC5333;
+    --color-green: #5BC259;
+    --color-orange_pale: #FCEFDC;
+    --color-grey_1: #5F6A77;
+    --color-grey_2: #7e8a98;
+    --color-grey_3: #A0AFC1;
+    --color-grey_4: #C5CCD5;
+    --color-grey_5: #D5DEE8;
+    --color-grey_6: #F9FAFE;
+    --color-white: #fff;
+}

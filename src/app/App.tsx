@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './index.css';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div>App</div>
   )
 }
 
-export default App
+export default App;
