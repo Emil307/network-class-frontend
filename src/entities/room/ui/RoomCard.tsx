@@ -1,4 +1,5 @@
 import React from 'react';
+import type { IRoom } from '../../../shared/api/models';
 import styled from 'styled-components';
 import JoinButton from './JoinButton';
 import avatar from '../../../../public/icons/avatar.svg';
@@ -7,10 +8,11 @@ import copy from '../../../../public/icons/copy.svg';
 
 const Container = styled.div`
     display: flex;
-    width: 1196px;
+    width: calc(100% - 48px);
     padding: 24px;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 18px;
 
     border-radius: 10px;
     background: var(--white);
@@ -51,17 +53,21 @@ const Access = styled.div`
     align-items: center;
 `
 
-const RoomCard: React.FC = () => {
+interface Props {
+    room: IRoom,
+}
+
+const RoomCard: React.FC<Props> = ({ room }) => {
   return (
     <Container>
         <Info>
             <img src={avatar} alt="avatar" />
-            <Title>Информатика 5 класс</Title>
+            <Title>{room.title}</Title>
         </Info>
-        <Teacher>Иванов Иван Иванович</Teacher>
+        <Teacher>{room.owner}</Teacher>
         <img src={callActive} alt='доступен'/>
         <Access>
-            <JoinButton disabled={false}/>
+            <JoinButton/>
             <button><img src={copy} alt="копировать" /></button>
         </Access>
     </Container>
