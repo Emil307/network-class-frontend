@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { IRoom } from '../../../shared/api/models';
 import styled from 'styled-components';
 import JoinButton from './JoinButton';
+import Tooltip from '../../../shared/Tooltip';
 import avatar from '../../../../public/icons/avatar.svg';
 import callActive from '../../../../public/icons/call-active.svg';
 import callDisabled from '../../../../public/icons/call-disabled.svg';
@@ -60,6 +61,15 @@ interface Props {
 }
 
 const RoomCard: React.FC<Props> = ({ room }) => {
+    const [tooltipActive, setTooltipActive] = useState(false);
+
+    function copyLink() {
+        setTooltipActive(true);
+        setTimeout(() => {
+            setTooltipActive(false);
+        }, 1500);
+    }
+
   return (
     <Container>
         <Info>
@@ -73,7 +83,9 @@ const RoomCard: React.FC<Props> = ({ room }) => {
         }
         <Access>
             <JoinButton/>
-            <button><img src={copy} alt="копировать" /></button>
+            <Tooltip active={tooltipActive}>
+                <button onClick={copyLink}><img src={copy} alt="копировать" /></button>
+            </Tooltip>
         </Access>
     </Container>
   )
