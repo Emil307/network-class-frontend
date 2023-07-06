@@ -27,3 +27,9 @@
     font-family: 'Noto Sans';
     font-weight: 700;
 }
+
+@font-face {
+    src: url('../../../public/fonts/KinoMTStd.ttf') format('truetype');
+    font-family: 'Kino';
+    font-weight: 400;
+}
