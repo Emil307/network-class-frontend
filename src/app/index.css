@@ -49,6 +49,7 @@
   button,
   textarea {
     font-family: inherit;
+    background: none;
   }
   
   input::-ms-clear {

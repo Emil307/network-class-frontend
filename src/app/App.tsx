@@ -3,14 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import './index.css';
 
 import Join from '../pages/Join';
-import Profile from '../pages/Profile';
+import Lobby from '../pages/Lobby';
 
 
 const App: React.FC = () => {
   return (
     <Routes>
       <Route path='/' element={<Join/>}/>
-      <Route path='/profile' element={<Profile/>}/>
+      <Route path='/lobby' element={<Lobby/>}/>
     </Routes>
   )
 }
