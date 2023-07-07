@@ -49,6 +49,7 @@
   button,
   textarea {
     font-family: inherit;
+    background: none;
   }
   
   input::-ms-clear {
@@ -102,9 +103,5 @@
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-  }
-  
-  ::-webkit-scrollbar {
-    width: 0;
   }
   
