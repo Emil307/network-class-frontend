@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { IRoom } from '../../../shared/api/models';
 import styled from 'styled-components';
 import JoinButton from './JoinButton';
-import Tooltip from '../../../shared/Tooltip';
+import Tooltip from '../../../shared/ui/Tooltip';
 import avatar from '../../../../public/icons/avatar.svg';
 import callActive from '../../../../public/icons/call-active.svg';
 import callDisabled from '../../../../public/icons/call-disabled.svg';

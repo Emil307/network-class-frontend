@@ -1,6 +1,7 @@
 import React from 'react';
 import type { IRoom } from '../shared/api/models';
 import Header from '../widgets/layout/Header';
+import Navbar from '../widgets/layout/Navbar';
 import RoomsList from '../widgets/RoomsList';
 
 const Lobby: React.FC = () => {
@@ -82,6 +83,7 @@ const Lobby: React.FC = () => {
   return (
     <div>
       <Header/>
+      <Navbar/>
       <RoomsList rooms={rooms}/>
     </div>
   )

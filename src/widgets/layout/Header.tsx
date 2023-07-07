@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Select from '../../shared/Select';
+import Select from '../../shared/ui/Select';
 import avatarIcon from '../../../public/icons/avatar.svg';
 import selectIcon from '../../../public/icons/select.svg';
 import settingsIcon from '../../../public/icons/setting-mini.svg';
