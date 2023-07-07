@@ -47,7 +47,7 @@ const Join: React.FC = () => {
             <button type="submit">Присоединиться</button>
           </form>
           <div className={styles.functions}>
-            <div className={styles.function}>
+            <a href="/lobby" className={styles.function}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="34"
@@ -72,8 +72,8 @@ const Join: React.FC = () => {
               <div className={styles.descriptionFunction}>
                 Создать свой класс и провести занятие онлайн
               </div>
-            </div>
-            <div className={styles.function}>
+            </a>
+            <a href="/lobby" className={styles.function}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="34"
@@ -102,7 +102,7 @@ const Join: React.FC = () => {
               <div className={styles.descriptionFunction}>
                 Найти класс и получить новые знания
               </div>
-            </div>
+            </a>
             <div className={styles.function}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import avatar from '../../../public/icons/avatar.svg';
-import select from '../../../public/icons/select.svg';
+import Select from '../../shared/ui/Select';
+import avatarIcon from '../../../public/icons/avatar.svg';
+import selectIcon from '../../../public/icons/select.svg';
+import settingsIcon from '../../../public/icons/setting-mini.svg';
+import logoutIcon from '../../../public/icons/logout.svg';
 
 const Container = styled.div`
   display: flex;
@@ -26,6 +29,7 @@ const Logo = styled.a`
 `
 
 const Right = styled.div`
+  position: relative;
   display: flex;
   width: 279px;
   align-items: center;
@@ -42,16 +46,48 @@ const Text = styled.div`
   color: var(--black);
 `
 
+const SelectLink = styled.a`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: inherit;
+`
+
+const Divider = styled.div`
+  margin: 10px 0;
+  width: 192px;
+  height: 0.5px;
+  background: var(--grey_5);
+`
+
 const Header: React.FC = () => {
+  const [selectActive, setSelectActive] = useState(false);
+
+  function changeSelectVisibility() {
+    setSelectActive(!selectActive);
+  }
+
   return (
     <Container>
       <Left>
         <Logo href='/'>Сетевой учебный класс</Logo>
       </Left>
       <Right>
-        <img src={avatar} alt="avatar" />
+        <img src={avatarIcon} alt="avatar" />
         <Text>Морозов Антон Дмитриевич</Text>
-        <button><img src={select} alt="меню" /></button>
+        <button onClick={changeSelectVisibility}><img src={selectIcon} alt="меню" /></button>
+
+        <Select active={selectActive}>
+          <SelectLink href="">
+            <img src={settingsIcon} alt="Настройки" />
+            <Text>Настройки</Text>
+          </SelectLink>
+          <Divider></Divider>
+          <SelectLink href="">
+            <img src={logoutIcon} alt="Выйти" />
+            <Text>Выйти</Text>
+          </SelectLink>
+        </Select>
       </Right>
     </Container>
   )

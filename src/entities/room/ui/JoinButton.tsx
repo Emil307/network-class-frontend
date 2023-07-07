@@ -24,9 +24,9 @@ interface Props {
     disabled: boolean,
 }
 
-const JoinButton = ({ disabled } : Props) => {
+const JoinButton = () => {
   return (
-    <Button disabled={disabled} onClick={() => {location.href="/lesson"}}>
+    <Button onClick={() => {location.href="/lesson"}}>
         Подключиться
         <img src={join} alt="Подключиться" />
     </Button>
