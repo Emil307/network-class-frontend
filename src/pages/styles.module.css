@@ -23,7 +23,7 @@
   position: relative;
 }
 
-.header > svg {
+.header > img {
   margin-right: 24px;
 }
 
@@ -146,6 +146,11 @@
   border: 2px solid #c5ccd5;
 }
 
+.function > img {
+  width: 34px;
+  height: 34px;
+}
+
 .function:hover,
 .function:active {
   border: 2px solid #175ef1;
@@ -188,11 +193,11 @@
   margin-bottom: 40px;
 }
 
-.topPattern > svg {
+.topPattern > img {
   width: 100%;
 }
 
-.bottomPattern > svg {
+.bottomPattern > img {
   width: 100%;
 }
 
