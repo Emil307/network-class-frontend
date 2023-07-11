@@ -7,13 +7,13 @@ import addImageIcon from '../../../../public/icons/gallery-add.svg';
 const Form = styled.form`
     position: relative;
     display: flex;
-    width: calc(100% - 52px);
+    width: calc(1240px - 52px);
     justify-content: space-between;
     align-items: center;
     padding: 24px;
     border-radius: 10px;
     background: var(--white);
-    margin: 2px 2px 25px 2px;
+    margin: 2px auto 25px;
     &::before {
         content: "";
         position: absolute;

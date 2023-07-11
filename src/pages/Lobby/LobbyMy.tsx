@@ -2,9 +2,10 @@ import React from 'react';
 import type { IRoom } from '../../shared/api/models';
 import Header from '../../widgets/layout/Header';
 import Navbar from '../../widgets/layout/Navbar';
+import CreateRoomForm from '../../features/createRoom/ui/CreateRoomForm';
 import RoomsList from '../../widgets/RoomsList';
 
-const Lobby: React.FC = () => {
+const LobbyMy: React.FC = () => {
   const rooms: IRoom[] = [
     {
         id: 1,                
@@ -83,10 +84,11 @@ const Lobby: React.FC = () => {
   return (
     <>
       <Header/>
-      <Navbar  activeLink='all'/>
+      <Navbar activeLink='my'/>
+      <CreateRoomForm/>
       <RoomsList rooms={rooms}/>
     </>
   )
 }
 
-export default Lobby
+export default LobbyMy;
