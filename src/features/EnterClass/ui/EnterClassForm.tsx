@@ -14,13 +14,13 @@ const Input = styled.input`
   flex: 1 1;
   padding: 24px 0 24px 20px;
   border-radius: 10px;
-  font-family: Noto Sans;
+  font-family: var(--font);
   font-size: 22px;
   font-weight: 300;
 
   &::placeholder {
-    color: #a0afc1;
-    font-family: Noto Sans;
+    color: var(--grey_3);
+    font-family: var(--font);
     font-size: 22px;
     font-weight: 400;
   }
@@ -36,7 +36,7 @@ const Button = styled.button`
   padding: 24px 20px;
   background: #175ef1;
   text-align: center;
-  font-family: Noto Sans;
+  font-family: var(--font);
   font-size: 22px;
   font-weight: 400;
 
