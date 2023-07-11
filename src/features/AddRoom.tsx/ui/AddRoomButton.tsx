@@ -13,8 +13,13 @@ const Button = styled.button`
     box-shadow: 0px 0px 8px 0px #E5EAF8;
 `
 
-export const AddRoomButton: React.FC = () => {
+interface Props {
+  onClick: () => void,
+}
+
+export const AddRoomButton: React.FC<Props> = ({ onClick }) => {
+
   return (
-    <Button><img src={addIcon} alt="создать" /></Button>
+    <Button onClick={onClick}><img src={addIcon} alt="создать" /></Button>
   )
 }
