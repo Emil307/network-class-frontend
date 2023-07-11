@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './index.css';
 
 import Join from '../pages/Join';
-import Lobby from '../pages/Lobby';
+import Lobby from '../pages/Lobby/Lobby';
 
 
 const App: React.FC = () => {

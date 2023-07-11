@@ -1,8 +1,8 @@
 import React from 'react';
-import type { IRoom } from '../shared/api/models';
-import Header from '../widgets/layout/Header';
-import Navbar from '../widgets/layout/Navbar';
-import RoomsList from '../widgets/RoomsList';
+import type { IRoom } from '../../shared/api/models';
+import Header from '../../widgets/layout/Header';
+import Navbar from '../../widgets/layout/Navbar';
+import RoomsList from '../../widgets/RoomsList';
 
 const Lobby: React.FC = () => {
   const rooms: IRoom[] = [
