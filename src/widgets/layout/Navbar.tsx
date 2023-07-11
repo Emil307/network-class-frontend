@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { AddRoomButton } from '../../features/AddRoom.tsx';
+import roomsState from '../../pages/Lobby/store/roomsListState.ts';
+import { AddRoomButton } from '../../features/AddRoom.tsx/index.ts';
 import { SearchInput } from '../../features/Search/index.ts';
 
 const Container = styled.div`
@@ -36,34 +37,38 @@ const Right = styled.div`
     padding-bottom: 13px;
 `
 
-interface Props {
-    children?: React.ReactNode,
-}
-
-const Navbar: React.FC<Props> = ({ children }) => {
+const Navbar: React.FC = () => {
     const [activeLink, setActiveLink] = useState('all');
 
     function activateAll() {
-        setActiveLink('all');
+        roomsState.choiceAll();
+        setActiveLink(roomsState.state);
     }
 
     function activateAccess() {
-        setActiveLink('access');
+        roomsState.choiceAccess();
+        setActiveLink(roomsState.state);
     }
 
     function activateMy() {
-        setActiveLink('my');
+        roomsState.choiceMy();
+        setActiveLink(roomsState.state);
+    }
+
+    function addRoom() {
+        roomsState.choiceMy();
+        setActiveLink(roomsState.state);
     }
 
   return (
     <Container>
         <Left>
-            <Link onClick={activateAll} style={activeLink === 'all' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Все классы(121)</Link>
-            <Link onClick={activateAccess} style={activeLink === 'access' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Доступные(5)</Link>
-            <Link onClick={activateMy} style={activeLink === 'my' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Мои(2)</Link>
+            <Link onClick={activateAll} style={roomsState.state === 'all' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Все классы(121)</Link>
+            <Link onClick={activateAccess} style={roomsState.state === 'access' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Доступные(5)</Link>
+            <Link onClick={activateMy} style={roomsState.state === 'my' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Мои(2)</Link>
         </Left>
         <Right>
-            <AddRoomButton />
+            <AddRoomButton onClick={addRoom} />
             <SearchInput/>
         </Right>
     </Container>
