@@ -75,14 +75,14 @@ const CreateButton = styled.button`
     border: 1px solid var(--orange);
     background: var(--white);
     box-shadow: 0px 2px 6px 0px #C5CCD5;
-    transition: all .3s;
+    transition: all .3s ease;
     &:hover {
         color: var(--white);
         background: var(--orange);
     }
 `
 
-const CreateRoomForm: React.FC = () => {
+export const CreateRoomForm: React.FC = () => {
   return (
     <Form>
         <Info>
@@ -102,4 +102,3 @@ const CreateRoomForm: React.FC = () => {
   )
 }
 
-export default CreateRoomForm;

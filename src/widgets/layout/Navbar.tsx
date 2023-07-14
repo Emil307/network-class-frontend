@@ -38,9 +38,12 @@ const Right = styled.div`
 
 interface Props {
     activeLink: string,
+    allLength?: number,
+    accessLength?: number,
+    myLength?: number,
 }
 
-const Navbar: React.FC<Props> = ({ activeLink }) => {
+const Navbar: React.FC<Props> = ({ activeLink, allLength, accessLength, myLength }) => {
 
     function addRoom() {
         window.location.href = '/lobby/my';
@@ -49,9 +52,9 @@ const Navbar: React.FC<Props> = ({ activeLink }) => {
   return (
     <Container>
         <Left>
-            <Link href='/lobby' style={activeLink === 'all' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Все классы(121)</Link>
-            <Link href='/lobby/access' style={activeLink === 'access' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Доступные(5)</Link>
-            <Link href='/lobby/my' style={activeLink === 'my' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Мои(2)</Link>
+            <Link href='/lobby' style={activeLink === 'all' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Все классы({121})</Link>
+            <Link href='/lobby/access' style={activeLink === 'access' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Доступные({5})</Link>
+            <Link href='/lobby/my' style={activeLink === 'my' ? {borderBottom: '2px var(--blue) solid', color: 'var(--blue)'} : {}}>Мои({2})</Link>
         </Left>
         <Right>
             <AddRoomButton onClick={addRoom} />

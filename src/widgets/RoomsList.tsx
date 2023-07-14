@@ -8,6 +8,7 @@ const Container = styled.div`
     padding-right: 5px;
     margin: 0 auto;
     max-height: 642px;
+    min-height: 542px;
 
     overflow: hidden;
     &:hover {

@@ -78,12 +78,18 @@ const LobbyAccess: React.FC = () => {
         owner: 'Иванова Мария Ивановна',
         isActive: false,
     },
+    {
+        id: 13,
+        title: 'Математика 8 класс',
+        owner: 'emilnovikov392@gmail.com',
+        isActive: false,
+    },
   ];
   
   return (
     <>
       <Header/>
-      <Navbar activeLink='access'/>
+      <Navbar activeLink='access' accessLength={5}/>
       <RoomsList rooms={rooms}/>
     </>
   )
