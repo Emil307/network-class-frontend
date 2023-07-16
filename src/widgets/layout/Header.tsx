@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import Select from "../../shared/ui/Select";
-import avatarIcon from "../../../public/icons/avatar.svg";
-import selectIcon from "../../../public/icons/select.svg";
-import settingsIcon from "../../../public/icons/setting-mini.svg";
-import logoutIcon from "../../../public/icons/logout.svg";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Select from '../../shared/ui/Select';
+import { LogoutButton } from '../../features/logout/index.ts';
+import avatarIcon from '../../../public/icons/avatar.svg';
+import selectIcon from '../../../public/icons/select.svg';
+import settingsIcon from '../../../public/icons/setting-mini.svg';
+import logoutIcon from '../../../public/icons/logout.svg';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Container = styled.div`
   display: flex;
@@ -63,6 +65,7 @@ const Divider = styled.div`
 
 const Header: React.FC = () => {
   const [selectActive, setSelectActive] = useState(false);
+  const { user, isAuthenticated } = useAuth0();
 
   function changeSelectVisibility() {
     setSelectActive(!selectActive);
@@ -75,10 +78,8 @@ const Header: React.FC = () => {
       </Left>
       <Right>
         <img src={avatarIcon} alt="avatar" />
-        <Text>Морозов Антон Дмитриевич</Text>
-        <button onClick={changeSelectVisibility}>
-          <img src={selectIcon} alt="меню" />
-        </button>
+        {isAuthenticated ? <Text>{user?.name}</Text> : <Text>Loading...</Text>}
+        <button onClick={changeSelectVisibility}><img src={selectIcon} alt="меню" /></button>
 
         <Select active={selectActive}>
           <SelectLink href="">
@@ -88,7 +89,7 @@ const Header: React.FC = () => {
           <Divider></Divider>
           <SelectLink href="">
             <img src={logoutIcon} alt="Выйти" />
-            <Text>Выйти</Text>
+            <LogoutButton/>
           </SelectLink>
         </Select>
       </Right>
