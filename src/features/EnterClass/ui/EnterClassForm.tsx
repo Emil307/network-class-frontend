@@ -7,7 +7,7 @@ const Form = styled.form`
   display: flex;
   flex-wrap: nowrap;
   border-radius: 10px;
-  border: 2px solid #175ef1;
+  border: 2px solid var(--blue);
 `;
 
 const Input = styled.input`
@@ -34,7 +34,7 @@ const Button = styled.button`
   color: white;
   border-radius: 10px 8px 8px 10px;
   padding: 24px 20px;
-  background: #175ef1;
+  background: var(--blue);
   text-align: center;
   font-family: var(--font);
   font-size: 22px;

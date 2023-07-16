@@ -11,11 +11,11 @@ const Link = styled.a`
   flex-wrap: nowrap;
   align-items: center;
   border-radius: 8px;
-  border: 2px solid #c5ccd5;
+  border: 2px solid var(--grey_4);
 
   &:hover,
   &:active {
-    border: 2px solid #175ef1;
+    border: 2px solid var(--blue);
     background: var(--grey_6);
     cursor: pointer;
   }

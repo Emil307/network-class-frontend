@@ -1,9 +1,8 @@
 .Join {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  overflow: hidden;
 }
 
 .leftSide {
@@ -62,7 +61,7 @@
 
 .rightSide {
   flex: 0 0;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(
     135deg,
     #175ef1 0%,

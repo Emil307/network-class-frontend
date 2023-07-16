@@ -10,7 +10,7 @@ const Button = styled.button`
   border-radius: 8px;
   line-height: 1.5;
   background: #f90;
-  box-shadow: 0px 2px 6px 0px #c5ccd5;
+  box-shadow: 0px 2px 6px 0px var(--grey_4);
   color: var(--white);
   font-family: var(--font);
   font-size: 22px;
