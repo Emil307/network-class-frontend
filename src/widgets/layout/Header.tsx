@@ -10,14 +10,15 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const Container = styled.div`
   display: flex;
-  width: 1240px;
+  min-width: 98vw;
   height: 92px;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-`
+  padding: 0 92px 0 55px;
+`;
 
-const Left = styled.div``
+const Left = styled.div``;
 
 const Logo = styled.a`
   text-align: center;
@@ -28,7 +29,7 @@ const Logo = styled.a`
   line-height: normal;
 
   color: var(--blue);
-`
+`;
 
 const Right = styled.div`
   position: relative;
@@ -36,7 +37,7 @@ const Right = styled.div`
   width: 279px;
   align-items: center;
   gap: 15px;
-`
+`;
 
 const Text = styled.div`
   font-family: var(--font);
@@ -46,21 +47,21 @@ const Text = styled.div`
   line-height: 20px;
 
   color: var(--black);
-`
+`;
 
 const SelectLink = styled.a`
   display: flex;
   gap: 8px;
   align-items: center;
   color: inherit;
-`
+`;
 
 const Divider = styled.div`
   margin: 10px 0;
   width: 192px;
   height: 0.5px;
   background: var(--grey_5);
-`
+`;
 
 const Header: React.FC = () => {
   const [selectActive, setSelectActive] = useState(false);
@@ -73,7 +74,7 @@ const Header: React.FC = () => {
   return (
     <Container>
       <Left>
-        <Logo href='/'>Сетевой учебный класс</Logo>
+        <Logo href="/">Сетевой учебный класс</Logo>
       </Left>
       <Right>
         <img src={avatarIcon} alt="avatar" />
@@ -93,7 +94,7 @@ const Header: React.FC = () => {
         </Select>
       </Right>
     </Container>
-  )
-}
+  );
+};
 
 export default Header;
