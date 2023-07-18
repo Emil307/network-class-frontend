@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import EnterButton from "../../../shared/ui/EnterButton";
 
 const Form = styled.form`
   width: 100%;
@@ -29,28 +30,11 @@ const Input = styled.input`
   }
 `;
 
-const Button = styled.button`
-  width: 214px;
-  color: white;
-  border-radius: 10px 8px 8px 10px;
-  padding: 24px 20px;
-  background: var(--blue);
-  text-align: center;
-  font-family: var(--font);
-  font-size: 22px;
-  font-weight: 400;
-
-  &:active,
-  &:hover {
-    background: #07379d;
-  }
-`;
-
 export const EnterClassForm: React.FC = () => {
   return (
     <Form action="#" method="get" autoComplete="on">
       <Input type="text" name="link" placeholder="Ссылка на класс" />
-      <Button type="submit">Присоединиться</Button>
+      <EnterButton type="submit">Присоединиться</EnterButton>
     </Form>
   );
 };
