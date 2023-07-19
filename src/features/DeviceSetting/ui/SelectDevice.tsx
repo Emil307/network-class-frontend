@@ -2,7 +2,6 @@ import React, { SyntheticEvent, useState } from "react";
 import styled from "styled-components";
 import close from "../../../../public/icons/select.svg";
 import open from "../../../../public/icons/select-active.svg";
-import Select from "../../../shared/ui/Select";
 
 const Container = styled.div`
   flex: 1 0 214px;
@@ -31,6 +30,7 @@ const SelectBlock = styled.div`
 `;
 
 const Selected = styled.div`
+  flex: 1 1;
   display: inline-block;
   color: black;
   font-family: var(--font);
@@ -41,6 +41,14 @@ const Selected = styled.div`
 const Icon = styled.img`
   width: 34px;
   height: 34px;
+`;
+
+const SelectList = styled.div`
+  padding: 20px 16px 16px;
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: 5px 5px 10px 0px var(--grey_5);
+  transition: all 0.3s ease;
 `;
 
 const SelectLink = styled.div`
@@ -78,8 +86,14 @@ export const SelectDevice: React.FC<Props> = (Props) => {
         <Selected>{selected}</Selected>
         {selectActive ? <Icon src={open} /> : <Icon src={close} />}
       </SelectBlock>
-      <div style={{ height: "6px", position: "relative" }}>
-        <Select active={selectActive}>
+      <div style={{ borderTop: "6px solid transparent" }}>
+        <SelectList
+          style={
+            selectActive
+              ? { opacity: 1, visibility: "visible" }
+              : { opacity: 0, visibility: "hidden" }
+          }
+        >
           {Props.list.length ? (
             Props.list.map((device) => (
               <>
@@ -101,7 +115,7 @@ export const SelectDevice: React.FC<Props> = (Props) => {
           ) : (
             <SelectLink>Нет устройств</SelectLink>
           )}
-        </Select>
+        </SelectList>
       </div>
     </Container>
   );

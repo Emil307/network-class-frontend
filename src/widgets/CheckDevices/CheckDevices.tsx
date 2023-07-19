@@ -7,9 +7,7 @@ import microOff from "../../../public/icons/microphone-off.svg";
 import { styled } from "styled-components";
 import { SwitchDevice } from "../../features/DeviceSetting";
 
-const Container = styled.div`
-  position: relative;
-`;
+const Container = styled.div``;
 
 const SwitchBlock = styled.div`
   display: flex;
@@ -27,11 +25,11 @@ const CheckDevices: React.FC = () => {
   return (
     <Container>
       <Webcam
-        audio={false}
+        audio={true}
         ref={webcam}
         mirrored={true}
         width={100 + "%"}
-        height={370}
+        height={100 + "%"}
       />
       <SwitchBlock>
         <SwitchDevice iconOn={microOn} iconOff={microOff} />
