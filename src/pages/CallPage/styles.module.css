@@ -7,18 +7,19 @@
 
 .video {
   min-width: 704px;
-  height: 370px;
+  min-height: 340px;
+  height: calc(25vw);
   border-radius: 10px;
   box-shadow: 0px 0px 2px 0px var(--grey_4);
+  overflow: hidden;
+  position: relative;
 }
 
 .settingsVideo {
   min-width: 704px;
   display: flex;
   flex-wrap: nowrap;
-  height: 119px;
   padding-top: 21px;
-  justify-content: space-between;
   align-items: flex-start;
   gap: 32px;
 }

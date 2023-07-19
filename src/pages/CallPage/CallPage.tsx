@@ -10,24 +10,21 @@ import EnterButton from "../../shared/ui/EnterButton";
 import { SelectDevice } from "../../features/DeviceSetting";
 
 const Page = styled.div`
-  min-height: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-items: stretch;
+  min-height: 100%;
 `;
 
 const Container = styled.div`
   background: var(--grey_6);
   flex: 1 1;
-  width: 100%;
   padding: 20px 106px 0 123px;
 `;
 
 const Content = styled.div`
   margin-top: 20px;
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
   flex-wrap: nowrap;
   gap: 130px;
@@ -44,7 +41,7 @@ const CallPage: React.FC = () => {
 
   const devices: string[][] = [
     ["hghghg", "jhhhhhhhh"],
-    ["qqqqqq", "qvvrrrrrrrrrr", "rr"],
+    ["qqqqqq", "qvvhhhhhhhhhrrrrrrrrr", "rr"],
     [],
   ];
 
